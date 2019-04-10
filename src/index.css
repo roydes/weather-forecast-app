@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: Futura PT Book, sans-serif;
+  font-size: 18px;
+  background-color: #262620;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

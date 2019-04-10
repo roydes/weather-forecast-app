@@ -1,0 +1,18 @@
+@mixin title {
+    font-family: Futura PT Light, sans-serif;
+    letter-spacing: 0.0;
+    line-height: 3rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+%title {
+    @include title;
+  }
+.title-large {
+    @extend %title;
+    font-size: 48px;
+}
+.subtitle {
+    @extend %title;
+    font-size: 24px;
+}

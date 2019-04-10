@@ -1,0 +1,73 @@
+$header-background: './assets/images/backgrounds-images/good-weather.jpg';
+.App {
+  background-color: #fff;
+  a:visited {
+    color: white;
+  }
+  color: "#121212";
+}
+
+.App-Banner {
+  width: 100%;
+  background-image: url($header-background);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  &:before {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  }
+  .Wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .Header-Text {
+    padding: 200px 100px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.App-Container {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.City-Name {
+  margin-top: 100px 0 15px 0;
+}
+.Forecast-Container {
+  width: 100%;
+  height: 200px;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+.Day-Forecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Day-Temp {
+  display: flex;
+  justify-content: space-between;
+  > .Temp {
+    min-width: 50px;
+    &:last-of-type {
+      margin-left: 10%;
+    }
+
+  }
+}

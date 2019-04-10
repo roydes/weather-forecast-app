@@ -1,0 +1,238 @@
+
+/**
+ * ----------------------------------------
+ * animation transition-all
+ * ----------------------------------------
+ */
+ @mixin transition-all($time) {
+  transition: all $time ease-in-out 0s;
+}
+
+
+/**
+ * ----------------------------------------
+ * animation slide-left
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(50%);
+              transform: translateX(50%);
+    }
+    100% {
+      -webkit-transform: translateX(-300%);
+              transform: translateX(-300%);
+    }
+  }
+  @keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(50%);
+              transform: translateX(50%);
+    }
+    100% {
+      -webkit-transform: translateX(-300%);
+              transform: translateX(-300%);
+    }
+  }
+  @-webkit-keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(-300%);
+              transform: translateX(-300%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  @keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(-300%);
+              transform: translateX(-300%);
+    }
+    100% {
+      -webkit-transform: translateX(50%);
+              transform: translateX(50%);
+    }
+  }
+.slide-left-enter {
+    opacity: 0;
+}
+.slide-left-enter-done {
+    opacity: 1 !important;
+    transition: opacity 600ms linear;
+	-webkit-animation: slide-right 0.6s cubic-bezier(0.2100, 0.460, 0.4100, 0.940) both;
+	        animation: slide-right 0.6s cubic-bezier(0.2100, 0.460, 0.4100, 0.940) both;
+}
+.slide-left-exit {
+    transition: opacity 800ms;
+    -webkit-animation: slide-left 0.6s cubic-bezier(0.2100, 0.460, 0.4100, 0.940) both;
+            animation: slide-left 0.6s cubic-bezier(0.2100, 0.460, 0.4100, 0.940) both;
+    opacity: 0;
+}
+
+.slide-left-exit-done {
+    opacity: 0 !important; 
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-appear
+ * ----------------------------------------
+ */ 
+
+.fade-appear {
+    opacity: 0;
+}
+.fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 800ms linear;
+}
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 800ms;
+}
+.wave {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+
+/**
+ * ----------------------------------------
+ * animation background-zoom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes background-zoom-in {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+            transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+            transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+}
+
+@keyframes background-zoom-in {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+            transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+            transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+}
+
+@-webkit-keyframes background-zoom-out {
+  100% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+            transform-origin: 50% 16%;
+  }
+  0% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+            transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+}
+
+@keyframes background-zoom-out {
+  100% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+            transform-origin: 50% 16%;
+  }
+  0% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+            transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+}
+
+@mixin background-zoom-in($time) {
+	-webkit-animation: background-zoom-in $time ease-out both;
+	        animation: background-zoom-in $time ease-out both;
+}
+@mixin background-zoom-out($time) {
+	-webkit-animation: background-zoom-out $time ease-out both;
+	        animation: background-zoom-out $time ease-out both;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-in-top
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-top {
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-out-top {
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@mixin slide-in-top($time){
+	-webkit-animation: slide-in-top $time cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-top $time cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@mixin slide-out-top($time) {
+	-webkit-animation: slide-out-top $time cubic-bezier(0.940, 0.450, 0.460, 0.250) both;
+	        animation: slide-out-top $time cubic-bezier(0.940, 0.450, 0.460, 0.250) both;
+}
